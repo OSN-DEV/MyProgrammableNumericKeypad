@@ -28,7 +28,7 @@ namespace MyProgrammableTenkey {
             this.ShutdownMode = ShutdownMode.OnExplicitShutdown;
             this._hotkey = new HotKeyHelper();
             this._controller = new MyProgrammableNumericKeypadMain();
-            //this._controller.Setup(this._hotkey);
+            this._controller.SetUp(this._hotkey);
         }
 
         /// <summary>

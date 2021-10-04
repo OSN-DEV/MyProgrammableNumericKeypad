@@ -26,13 +26,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyProgrammableNumericKeypadMain));
             this.MainMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.Notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.MainMenuObserve = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MainMenuLoadKeymapping = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuShowKeymapping = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.MainMenuQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.Notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.MainMenu.SuspendLayout();
             // 
             // MainMenu
@@ -46,13 +46,7 @@
             this.MainMenuQuit});
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Size = new System.Drawing.Size(171, 104);
-            // 
-            // Notify
-            // 
-            this.Notify.ContextMenuStrip = this.MainMenu;
-            this.Notify.Icon = ((System.Drawing.Icon)(resources.GetObject("Notify.Icon")));
-            this.Notify.Text = "MPNO";
-            this.Notify.Visible = true;
+            this.MainMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MainMenu_ItemClicked);
             // 
             // MainMenuObserve
             // 
@@ -60,6 +54,11 @@
             this.MainMenuObserve.Name = "MainMenuObserve";
             this.MainMenuObserve.Size = new System.Drawing.Size(170, 22);
             this.MainMenuObserve.Text = "observe";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(167, 6);
             // 
             // MainMenuLoadKeymapping
             // 
@@ -78,16 +77,18 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(167, 6);
-            // 
             // MainMenuQuit
             // 
             this.MainMenuQuit.Name = "MainMenuQuit";
             this.MainMenuQuit.Size = new System.Drawing.Size(170, 22);
             this.MainMenuQuit.Text = "quit";
+            // 
+            // Notify
+            // 
+            this.Notify.ContextMenuStrip = this.MainMenu;
+            this.Notify.Icon = ((System.Drawing.Icon)(resources.GetObject("Notify.Icon")));
+            this.Notify.Text = "MPNO";
+            this.Notify.Visible = true;
             this.MainMenu.ResumeLayout(false);
 
         }

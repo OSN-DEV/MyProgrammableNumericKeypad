@@ -14,10 +14,10 @@ namespace MyProgrammableTenkey.AppCommon {
             /// <summary>
             /// unknown error
             /// </summary>
-            Err999
+            Err999,
         }
         private static Dictionary<ErrId, string> _errorMessages = new Dictionary<ErrId, string> {
-            ,{ ErrId.Err999, "unknown error" }
+            { ErrId.Err999, "unknown error" }
         };
 
         /// <summary>
