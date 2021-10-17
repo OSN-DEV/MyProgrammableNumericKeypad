@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyProgrammableTenkey.UI.KeyMapping"
         mc:Ignorable="d"
-        Title="KeymapView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="KeymapView" Height="450" Width="200" WindowStartupLocation="CenterScreen" SizeToContent="Height" WindowStyle="ToolWindow" KeyDown="Window_KeyDown">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Meiryo UI" />
+            <Setter Property="FontSize" Value="20.0" />
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <ListView Name="cData" Grid.Row="3" Padding="0" ItemsSource="{Binding KeyMappingList}" IsEnabled="False">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding StringKey}" />
+                        <TextBlock Grid.Column="1" Text="{Binding KeyPair}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
 </Window>

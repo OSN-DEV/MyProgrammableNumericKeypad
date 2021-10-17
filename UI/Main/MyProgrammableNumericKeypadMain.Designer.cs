@@ -50,7 +50,6 @@
             // 
             // MainMenuObserve
             // 
-            this.MainMenuObserve.CheckOnClick = true;
             this.MainMenuObserve.Name = "MainMenuObserve";
             this.MainMenuObserve.Size = new System.Drawing.Size(170, 22);
             this.MainMenuObserve.Text = "observe";

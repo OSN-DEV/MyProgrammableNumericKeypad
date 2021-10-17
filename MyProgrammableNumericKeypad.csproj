@@ -38,11 +38,18 @@
     <ApplicationIcon>app.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OsnCsLib.Common">
+    <Reference Include="OsnCsLib.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>libs\OsnCsLib.Common.dll</HintPath>
     </Reference>
     <Reference Include="OsnCsLib.Data">
       <HintPath>libs\OsnCsLib.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OsnCsLib.File">
+      <HintPath>libs\OsnCsLib.File.dll</HintPath>
+    </Reference>
+    <Reference Include="OsnCsLib.WPFComponent">
+      <HintPath>libs\OsnCsLib.WPFComponent.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -67,12 +74,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppCommon\Constants.cs" />
-    <Compile Include="AppCommon\Message.cs" />
-    <Compile Include="Func\KeyMappingParser.cs" />
-    <Compile Include="Func\SnedKeys.cs" />
+    <Compile Include="Func\SendKeys.cs" />
+    <Compile Include="KeyData\KeyItem.cs" />
+    <Compile Include="KeyData\KeySetPair.cs" />
     <Compile Include="Repo\AppSettingDataRepo.cs" />
     <Compile Include="Repo\Data\KeyMappingData.cs" />
     <Compile Include="Repo\KeyMappingRepo.cs" />
+    <Compile Include="UI\KeyMapping\KeyMappingViewModel.cs" />
     <Compile Include="UI\KeyMapping\KeymapView.xaml.cs">
       <DependentUpon>KeymapView.xaml</DependentUpon>
     </Compile>
@@ -123,6 +131,5 @@
   <ItemGroup>
     <Resource Include="app.ico" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

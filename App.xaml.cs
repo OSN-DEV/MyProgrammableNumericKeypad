@@ -8,7 +8,7 @@ namespace MyProgrammableTenkey {
     /// </summary>
     public partial class App : Application {
         #region Declaration
-        private AppLaunchChecker _launchChecker = new AppLaunchChecker("MyProgrammableTenkey");
+        private AppLaunchChecker _launchChecker = new AppLaunchChecker("MyProgrammableTenkey", "MyProgrammableTenkey.UI.Main.App");
         private MyProgrammableNumericKeypadMain _controller;
         private HotKeyHelper _hotkey;
         #endregion
@@ -37,8 +37,12 @@ namespace MyProgrammableTenkey {
         /// <param name="e"></param>
         protected override void OnExit(ExitEventArgs e) {
             base.OnExit(e);
-            this._hotkey.Dispose();
-            this._controller.Dispose();
+            if (null != this._hotkey) {
+                this._hotkey.Dispose();
+            }
+            if (null != this._controller) {
+                this._controller.Dispose();
+            }
         }
         #endregion
     }
