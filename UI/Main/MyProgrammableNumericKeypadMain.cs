@@ -133,6 +133,7 @@ namespace MyProgrammableTenkey.UI.Main {
         private void LoadKeyMappingFile() {
             var keyMappingrepo = new KeyMappingRepo();
             this._keyMapping = keyMappingrepo.Load(this._setting.KeyMappingFile);
+            this.MainMenuObserve.Enabled = (0 < this._keyMapping.Count);
         }
 
         /// <summary>
